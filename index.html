@@ -2,26 +2,67 @@
 <html>
 <head>
     <title>Pixel Art Maker!</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Monoton">
+    <link href="https://fonts.googleapis.com/css?family=Fjalla+One|Monoton" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Lab: Pixel Art Maker</h1>
+  <div class="title">
+    <h1>Pixel Art Maker</h1>
+  </div>
 
+  <!-- <div class="modal">
+    <div class="modal-content">
+      <h2>Sorry!</h2>
+      <p>This app will not work with your browser. Please download a supported browser:</p>
+      <a href="https://www.google.com/chrome/">Download Chrome</a>
+      <a href="https://www.mozilla.org/en-US/firefox/">Download Firefox</a>
+    </div>
+  </div> -->
+
+  <div class="grid-size">
     <h2>Choose Grid Size</h2>
     <form id="sizePicker">
         Grid Height:
-        <input type="number" id="inputHeight" name="height" min="1" value="1">
-        Grid Width:
-        <input type="number" id="inputWidth" name="width" min="1" value="1">
-        <input type="submit">
+        <input type="number" id="inputHeight" name="height" min="1" value="20">
+        Grid Width (Max 50):
+        <input type="number" id="inputWidth" name="width" min="1" max="50" value="20">
+        <input class="grid-btn" type="submit" value="Make the grid!">
     </form>
+  </div>
 
-    <h2>Pick A Color</h2>
-    <input type="color" id="colorPicker">
+  <div class="art-space">
+    <div class="color-picker">
+      <h2>Create!</h2>
+        <div class="color-palette">
+          <button value="#ff0000" class="color-box red"></button>
+          <button value="#ffa500" class="color-box orange"></button>
+          <button value="#ffff00" class="color-box yellow"></button>
+          <button value="#008000" class="color-box green"></button>
+          <button value="#0000ff" class="color-box blue"></button>
+          <button value="#800080" class="color-box violet"></button>
+          <button value="#fff" class="color-box white"></button>
+          <h3>Custom color:</h3>
+        <input type="color" value="#ff0000" id="color-select" class="color-box">
+        </div>
+        <div class="tool-box">
+          <div class="tip">
+            <h3>Tip:</h3>
+              <p>Right click to erase!</p>
+          </div>
+            <div class="tools">
+              <button type="button" name="fill" class="fill-btn"></button>
+              <button type="button" name="new" class="new-btn"></button>
+              <button type="button" name="trash" class="trash-btn"></button>
+            </div>
+        </div>
+    </div>
+    <div class="canvas">
+      <table id="pixelCanvas" oncontextmenu="return false;"></table>
+      <button type="button" class="clear btn" name="clear">Clear Grid</button>
+      <button type="button" class="new btn" name="clear">New Grid</button>
+    </div>
+  </div>
 
-    <h2>Design Canvas</h2>
-    <table id="pixelCanvas"></table>
     <script src="https://code.jquery.com/jquery-3.3.1.js"integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="crossorigin="anonymous"></script>
     <script src="designs.js"></script>
 </body>

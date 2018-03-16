@@ -1,14 +1,25 @@
+html {
+}
+
 body {
+    background: linear-gradient(#57e2f2, #8c00ff);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     text-align: center;
+    font-family: 'Fjalla One', sans-serif;
 }
 
 h1 {
+    color: #f2f215;
     font-family: Monoton;
     font-size: 70px;
-    margin: 0.2em;
+    margin: 0.5em;
 }
 
 h2 {
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 30px;
+    color: #8c00ff;
     margin: 1em 0 0.25em;
 }
 
@@ -36,5 +47,161 @@ td {
 }
 
 input[type=number] {
+    -webkit-appearance: none;
+    font-size: 20px;
+    text-align: center;
+    margin: 15px;
+    box-shadow: none;
+    border: none;
     width: 6em;
+    height: 30px;
+    border-radius: 5px;
+}
+
+#pixelCanvas {
+  background-color: #fff;
+}
+
+.grid-size {
+  padding: 50px;
+}
+
+.art-space {
+  display: none;
+}
+
+.color-box {
+  height: 40px;
+  width: 40px;
+  margin: 20px;
+  border: 2px solid #fff;
+  border-radius: 3px;
+}
+
+.color-box:hover {
+  cursor: pointer;
+}
+
+.color-palette {
+  display: inline-flex;
+}
+
+.red {
+  background-color: #FF0000;
+}
+
+.orange {
+  background-color: #FFA500;
+}
+
+.yellow {
+  background-color: #FFFF00;
+}
+
+.green {
+  background-color: #008000;
+}
+
+.blue {
+  background-color: #0000FF;
+}
+
+.violet {
+  background-color: #800080;
+}
+
+.white {
+  background-color: #fff;
+}
+
+/* .color-picker {
+  padding: 50px;
+} */
+
+.color-picker h2 {
+  color: #8c00ff;
+}
+
+.canvas h2 {
+  color: #7D4EF3;
+}
+
+.grid-btn {
+  font-size: 18px;
+  color: #fff;
+  height: 40px;
+  border-radius: 5px;
+  background-color: #8c00ff;
+  cursor: pointer;
+}
+
+/* .modal {
+  position: fixed;
+  visibility: hidden;
+  height: 200px;
+  width: 400px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+.modal-content {
+  padding: 20px;
+}
+
+.modal-content a {
+  margin-right: 20px;
+} */
+
+
+.btn {
+  margin-top: 20px;
+  margin-bottom: 30px;
+  font-size: 18px;
+  color: #fff;
+  height: 40px;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: rgba(58,58,58, .5);
+}
+
+.tool-box {
+  height: 150px;
+  width: 400px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.3);
+  border: 2px solid #fff;
+  border-radius: 5px;
+}
+
+.fill-btn {
+  background-image: url("/images/fill.png");
+  background-size: cover;
+  background-color: transparent;
+  border: none;
+  margin: 0px 20px;
+  height: 50px;
+  width: 50px;
+}
+
+.new-btn {
+  background-image: url("/images/new.png");
+  background-size: cover;
+  background-color: transparent;
+  border: none;
+  margin: 0 20px;
+  height: 50px;
+  width: 50px;
+}
+
+.trash-btn {
+  background-image: url("/images/trash.png");
+  background-size: cover;
+  background-color: transparent;
+  border: none;
+  margin: 0 20px;
+  height: 50px;
+  width: 50px;
 }

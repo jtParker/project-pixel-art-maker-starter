@@ -1,33 +1,58 @@
 $(document).ready(function() {
 
-  // Select color input
+    let height, width, color, grid;
 
-  $('#pixelCanvas').click(function( e ) {
-    var color = $('#colorPicker').val();
-    var target = $( e.target );
-    $(target).css('background-color', color);
-  })
+    $('.color-palette').click(function(e) {
+      let selection = $( e.target );
+      color = $(selection).val();
+    });
 
-  // Select size inputWidth
-  var height;
-  var width;
+    $('#color-select').change(function() {
+      color = $('#color-select').val();
+    });
 
-  $(':submit').click(function(e) {
-    e.preventDefault();
-    height = $('#inputHeight').val();
-    width = $('#inputWidth').val();
-    makeGrid(height, width);
-  })
+    $('#pixelCanvas').click(function(e) {
+      let target = $( e.target );
+      $(target).css('background-color', color);
+    });
 
-  // When size is submitted by the user, call makeGrid()
+    $('.grid-btn').click(function(e) {
+      e.preventDefault();
+      height = $('#inputHeight').val();
+      width = $('#inputWidth').val();
+      if (width > 50) {
+        alert("Maximum width is 50");
+        return;
+      } else {
+          makeGrid(height, width);
+          // $('html, body').animate({ scrollTop: $('.color-picker').offset().top}, 1000);
+          $('.grid-size').hide('slow', function() {
+            $('.art-space').show('slow');
+          });
+      }
+    });
 
-  function makeGrid(height, width) {
-    var grid;
-    var cells = '<td></td>'.repeat(width);
-    for (let r = 0; r < height; r++ ) {
-      grid += '<tr>' + cells + '</tr>';
+    $('.clear').click(function() {
+      $('td').css('background-color', '#fff');
+    });
+
+    $('.new').click( function() {
+      $('.pixelCanvas').empty();
+      $('.art-space').hide('slow', function() {
+        $('.grid-size').show('slow');
+      })
+    });
+
+    $('#pixelCanvas').contextmenu(function(e) {
+      let target = $(e.target);
+      $(target).css('background-color', '#fff');
+    });
+
+    function makeGrid(height, width) {
+      let cells = '<td></td>'.repeat(width);
+      for (let r = 0; r < height; r++ ) {
+        grid += '<tr>' + cells + '</tr>';
+      }
+      $('#pixelCanvas').append(grid);
     }
-    $('#pixelCanvas').append(grid);
-  };
-
-})
+});
